@@ -1,0 +1,98 @@
+#1
+#adding and deleting class functions
+#creating class
+class MyClass:
+    def __init__(self,n):
+        self.name=n
+
+#creating specimens
+A=MyClass("A")
+B=MyClass("B")
+#creating functions with argument
+def hello(self):
+    print ("This is  specimen ", self.name , " - HELLO")
+#creating function with argument
+def hi(self):
+    print (self.name + ": HI")
+
+#determine class function
+MyClass.say=hello
+#calling method of specimen
+A.say()
+#calling method of specimen
+B.say()
+#calling function of the Claass
+MyClass.say(A)
+MyClass.say(B)
+
+#changing refering for the function
+MyClass.say=hi
+#calling method of specimen
+A.say()
+#calling method of specimen
+B.say()
+#calling function of the Claass
+MyClass.say(A)
+MyClass.say(B)
+
+#deleting function of the class
+del MyClass.say
+
+#calling for method of specimen
+try:
+    A.say()
+#If there are no such method
+except AttributeError:
+    print ("There are no such method!")
+
+#calling for method of specimen
+try:
+    B.say()
+#If there are no such method
+except AttributeError:
+    print ("There are no such method!")
+
+#calling for function of the class
+try:
+    MyClass.say(A)
+#If there are no such method
+except AttributeError:
+    print ("There are no such function!")
+    
+    
+    
+#2
+#operations with methods and functions
+#creating a class
+class MyClass:
+    #The constructor of class specimen
+    def __init__(self,n):
+        self.name = n
+    #the method of class specimen
+    def say(self):
+        print ("THE CLASS MyClass is ", self.name)
+#creating specimens
+A=MyClass("A")
+B=MyClass("B")
+#calling for methods of specimens
+A.say()
+B.say()
+#referibg for the method writing into the variable
+F=A.say
+#calling the function
+F()
+#The attribute of specimen getting some text
+A.say=("This is the attribute of class A specimen")
+#checking value of the attribute
+print (A.say)
+#truing call a method of specimen
+try:
+    A.say()
+#if no such method
+except TypeError:
+    print ("Wrong command")
+#calling for method
+B.say()
+#calling for the function
+F()
+    
